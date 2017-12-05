@@ -1,5 +1,4 @@
 .catalog:
-  name: "My Tomcat application"
+  name: "Tomcat JSP Engine"
   version: "0.1"
-  description: "Tomcat"
-
+  description: "Managed Service by GCU Germany"
