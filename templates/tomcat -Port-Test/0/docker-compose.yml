@@ -3,9 +3,6 @@ Tomcatv8.5.24:
   tty: true
   image: tomcat:latest
   stdin_open: true
-  
-  ports:
-    - '8080:8080'
     
    environment:
     - TOMCAT_HTTP_PORT_NUMBER=${TOMCAT_HTTP_PORT_NUMBER}
