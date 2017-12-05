@@ -3,10 +3,4 @@
   version: "0.1"
   description: "Managed Service by GCU Germany"
   
-  questions: 
-    - variable: "TOMCAT_HTTP_PORT_NUMBER"
-      label: "Tomcat Port"
-      description: "Tomcat Port"
-      default: 8080
-      required: false
-      type: "string"
+ 
