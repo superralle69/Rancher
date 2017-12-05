@@ -5,5 +5,5 @@ Tomcatv8.5.24:
   stdin_open: true
   
    ports:
-     - "${TOMCAT_MASTER_PORT}:${TOMCAT_MASTER_PORT}"
+     - "'${TOMCAT_MASTER_PORT}':'${TOMCAT_MASTER_PORT}'"
    
