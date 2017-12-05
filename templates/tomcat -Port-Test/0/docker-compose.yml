@@ -4,6 +4,6 @@ Tomcatv8.5.24:
   image: tomcat:latest
   stdin_open: true
   
-   ports:
-     - "8081:8081"
+   environment:
+   TOMCAT_HTTP_PORT_NUMBER : ${TOMCAT_HTTP_PORT_NUMBER}
    
