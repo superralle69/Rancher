@@ -1,0 +1,5 @@
+name: MariaDB
+description: |
+  MariaDB
+version: 0.1
+category: DB

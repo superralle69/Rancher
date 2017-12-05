@@ -1,0 +1,121 @@
+.catalog:
+  name: "MariaDB Database"
+  version: "latest"
+  description: "MariaDB Database"
+  uuid: mariadb
+  questions: 
+    - variable: "MYSQL_ROOT_PASSWORD"
+      label: "MariaDB root's password"
+      description: "MariaDB root's password"
+      default: 
+      required: true
+      type: "password"
+    - variable: "MYSQL_VOLUME"
+      label: "Directory where files will reside"
+      description: "Directory where files will reside"
+      default: "mariadbvolume"
+      required: true
+      type: "string"
+    - variable: "VOLUME_DRIVER"
+      label: "The volume driver to use"
+      description: "The volume driver to use. Options: local or convoy-nfs"
+      default: "local"
+      required: true
+      type: "enum"
+      options:
+        - "local"
+        - "convoy-nfs"
+    - variable: "MEM_LIMIT"
+      label: "Memory limit of the container"
+      description: "Number is a positiv integer in Byte"
+      default: 2147483648
+      required: true
+      type: "int"
+    - variable: "MYSQL_MAX_CONNECTIONS"
+      label: "PERFORMANCE: Max Connections"
+      description: "Max Connections parameter (0 - Automatic)"
+      default: 0
+      required: false
+      type: "int"
+    - variable: "MYSQL_BUFFER_POOL"
+      label: "PERFORMANCE: Buffer Pool"
+      description: "innodb_buffer_pool_size parameter (0 - Automatic)"
+      default: 0
+      required: false
+      type: "int"
+    - variable: "MYSQL_SSL_ENABLE"
+      label: "Enable SSL"
+      description: "Enable (true) or disable (false) SSL"
+      default: "false"
+      required: true
+      type: "boolean"
+    - variable: "MYSQL_SSL_CA"
+      label: "SSL: CA Content"
+      description: "CA file Content  (Required SSL Enabled)"
+      default: ""
+      required: false
+      type: "multiline"
+    - variable: "MYSQL_SSL_KEY"
+      label: "SSL: KEY Content"
+      description: "KEY file Content (Required SSL Enabled)"
+      default: ""
+      required: false
+      type: "multiline"
+    - variable: "MYSQL_SSL_CRT"
+      label: "SSL: CERT Content"
+      description: "Cert file Content (Required SSL Enabled)"
+      default: ""
+      required: false
+      type: "multiline"
+    - variable: "MYSQL_REPLICATION_MODE"
+      label: "Replication Mode"
+      description: "Indicates replication mode (none, master, slave)"
+      default: "none"
+      required: true
+      type: "enum"
+      options:
+        - none
+        - master
+        - slave
+    - variable: "MYSQL_REPLICATION_USER"
+      label: "REPLICATION: Username"
+      description: "Username used for replication"
+      default: 
+      required: false
+      type: "string"
+    - variable: "MYSQL_REPLICATION_PASSWORD"
+      label: "REPLICATION: Password"
+      description: "Password to user replication"
+      default: 
+      required: false
+      type: "password"
+    - variable: "MYSQL_MASTER_HOST"
+      label: "REPLICATION: Master IP (only slave mode)"
+      description: "Indicate master IP (only slave mode)"
+      default: 
+      required: false
+      type: "string"
+    - variable: "MYSQL_MASTER_PORT"
+      label: "REPLICATION: Master Port (only slave mode)"
+      description: "Indicate master port (only slave mode)"
+      default: 4306
+      required: false
+      type: "string"
+    - variable: "MYSQL_RESET_SLAVE"
+      label: "REPLICATION: Reset Slave (only slave mode)"
+      description: "Reset slave with new master configuration (only slave mode)"
+      default: "false"
+      required: false
+      type: "boolean"
+    - variable: "RESTART_POLICIES"
+      label: "Autorestart"
+      description: "If a container of the service fails, it will be automatically restarted"
+      default: "no"
+      required: true
+      type: "enum"
+      options:
+        - no
+        - on-failure:3
+        - always
+        - unless-stopped
+

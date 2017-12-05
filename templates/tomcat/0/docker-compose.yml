@@ -1,0 +1,5 @@
+
+Tomcatv13:
+  tty: true
+  image: tomcat:latest
+  stdin_open: true
