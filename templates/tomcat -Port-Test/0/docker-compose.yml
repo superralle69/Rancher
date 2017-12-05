@@ -4,12 +4,6 @@ Tomcatv8.5.24:
   image: tomcat:latest
   stdin_open: true
   
- 
-   volumes:
-    - $PWD/httpd/conf/jk_mod/jk.conf:/etc/apache2/mods-available/jk.conf
-    - $PWD/logs:/var/log/apache2
-    - $PWD/httpd/conf/jk_mod/workers.properties:/etc/libapache2-mod-jk/workers.properties
-    - $PWD/httpd/conf/apache2/000-default.conf:/etc/apache2/sites-available/000-default.conf
    ports:
      - "${TOMCAT_MASTER_PORT}:${TOMCAT_MASTER_PORT}"
    

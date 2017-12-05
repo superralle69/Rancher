@@ -5,8 +5,8 @@
   
   questions: 
     - variable: "TOMCAT_MASTER_PORT"
-      label: "Port"
-      description: "Indicate master port (only slave mode)"
+      label: "Tomcat Port"
+      description: "Tomcat Port"
       default: 8080
       required: false
       type: "string"
