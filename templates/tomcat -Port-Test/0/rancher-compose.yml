@@ -1,0 +1,12 @@
+.catalog:
+  name: "Tomcat JSP Engine"
+  version: "0.1"
+  description: "Managed Service by GCU Germany"
+  
+  questions: 
+    - variable: "TOMCAT_MASTER_PORT"
+      label: "Port"
+      description: "Indicate master port (only slave mode)"
+      default: 8080
+      required: false
+      type: "string"
