@@ -5,5 +5,5 @@ Tomcatv8.5.24:
   stdin_open: true
   
    environment:
-   TOMCAT_HTTP_PORT_NUMBER : ${TOMCAT_HTTP_PORT_NUMBER}
+   - TOMCAT_HTTP_PORT_NUMBER : ${TOMCAT_HTTP_PORT_NUMBER}
    
