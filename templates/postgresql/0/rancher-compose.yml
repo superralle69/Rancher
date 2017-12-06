@@ -1,0 +1,4 @@
+.catalog:
+  name: "PostgreSQL"
+  version: "0.1"
+  description: "Managed Service by GCU Germany"

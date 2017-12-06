@@ -4,7 +4,5 @@ Tomcatv8.5.24:
   image: tomcat:latest
   stdin_open: true
   
-  ports:
-  - "8081:8081"
     
    

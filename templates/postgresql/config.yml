@@ -1,0 +1,5 @@
+name: postgresql
+description:
+  Managed Service by GCU Germany
+version: 0.1
+category: Web

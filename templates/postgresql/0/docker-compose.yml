@@ -1,0 +1,5 @@
+
+postgresql:
+  tty: true
+  build: postgresql/
+  stdin_open: true
