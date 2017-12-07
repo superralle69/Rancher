@@ -1,26 +1,19 @@
-version: '2'
+version: '3'
 services:
   postgres-lb:
     image: rancher/lb-service-haproxy
     ports:
       - ${lb_port}
-    {{- if ne .Values.host_label ""}}
-    labels:
-      io.rancher.scheduler.affinity:host_label: ${host_label}
-    {{- end}}
 
   postgres-data:
     image: busybox
     labels:
       io.rancher.container.start_once: true
-    {{- if ne .Values.host_label ""}}
-      io.rancher.scheduler.affinity:host_label: ${host_label}
-    {{- end}}
     volumes:
-      - pgdata:/var/lib/postgresql/data/pgdata
+      - /var/lib/postgresql/data/pgdata
 
   postgres:
-    image: postgres:${POSTGRES_TAG}
+    image: postgres:latest
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_DB: ${postgres_db}
@@ -30,12 +23,5 @@ services:
     stdin_open: true
     labels:
       io.rancher.sidekicks: postgres-data
-    {{- if ne .Values.host_label ""}}
-      io.rancher.scheduler.affinity:host_label: ${host_label}
-    {{- end}}
     volumes_from:
       - postgres-data
-volumes:
-  pgdata:
-    driver: ${VOLUME_DRIVER}
-    per_container: true
